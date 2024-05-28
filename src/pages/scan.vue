@@ -39,7 +39,7 @@ title.value = (query && query.title) || "DMAE";
 value.value = (query && query.value) || "";
 
 const search = () => {
-  if (value.value) {
+  if (value.value && value.value.length === 20) {
     if (value.value.length < 10) {
       content.value = "请输入正确的防伪码";
       return;
@@ -59,7 +59,7 @@ const search = () => {
 
     content.value = "您好，您所查询的是DMAE正牌产品，请放心使用，感谢您的查询";
   } else {
-    content.value = "请输入查询内容";
+    content.value = "防伪码错误";
   }
   console.log(value.value);
 };
@@ -76,7 +76,7 @@ const onlyAllowNumber = (value: string) => !value || /^\d+$/.test(value);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 80px;
+  font-size: 100px;
   font-weight: bold;
   letter-spacing: 10px;
   width: 100vw;
@@ -89,7 +89,7 @@ const onlyAllowNumber = (value: string) => !value || /^\d+$/.test(value);
 }
 .btn {
   margin-top: 24px;
-  font-size: 22px;
+  font-size: 20px;
 
   width: 100%;
 }
