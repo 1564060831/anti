@@ -11,6 +11,7 @@
       maxlength="20"
       show-count
       clearable
+      class="n-input-class"
       v-model:value="value"
       @clear="clearInput"
     />
@@ -104,5 +105,9 @@ const onlyAllowNumber = (value: string) => !value || /^\d+$/.test(value);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.n-input-class {
+  background-color: #f0f0f0; /* 设置背景颜色 */
+  color: #f0f0f0;
 }
 </style>
